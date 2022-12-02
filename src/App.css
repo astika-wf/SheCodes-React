@@ -1,0 +1,41 @@
+body {
+  font-family: "Peralta", "Poppins", sans-serif;
+  background-image: url("https://github.com/astika-wf/SheCodesPlus-WeatherForecast/blob/main/lanscape.jpg?raw=true");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  background-attachment: fixed;
+  min-height: 100vh;
+  display: block;
+  margin: auto;
+  position: relative;
+  text-align: center;
+}
+
+.App {
+  display: block;
+  position: relative;
+  margin: auto;
+  top: 25px;
+  background: linear-gradient(red, transparent),
+    linear-gradient(to top left, #92b4ec, transparent),
+    linear-gradient(to bottom right, #cdf0ea, transparent);
+  background-blend-mode: screen;
+  max-width: 40%;
+  border: 1px solid #dadde1;
+  border-radius: 50px;
+  box-shadow: 5px 10px;
+  padding-bottom: 20px;
+}
+
+@media (max-width: 800px) {
+  .App {
+    display: block;
+    margin: auto;
+    text-align: center;
+    max-width: 20%;
+    margin-top: 10px;
+    min-width: 350px;
+  }
+}
