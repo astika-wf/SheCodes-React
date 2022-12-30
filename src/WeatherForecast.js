@@ -37,7 +37,7 @@ export default function WeatherForecast(props) {
     return (
      <div className="container">
       <div className="WeatherForecast">
-        <div className="d-flex flex-row> 
+        <div className="d-flex flex-row"> 
           <div className="col-2">
           {forecast.map(function (dailyForecast, index) {
             if (index < 7 && index !== 0) {
