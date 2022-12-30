@@ -29,6 +29,14 @@ body {
   padding-bottom: 20px;
 }
 
+.container {
+ display: block;
+ position: relative;
+ margin: auto;
+ text-align: center;
+ top: 10px;
+}
+
 @media (max-width: 800px) {
   .App {
     display: block;
