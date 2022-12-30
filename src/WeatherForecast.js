@@ -5,51 +5,51 @@ import axios from "axios";
 import "./WeatherForecast.css";
 
 export default function WeatherForecast(props) {
-    let [loaded, setLoaded] = useState(false);
-    let [forecast, setForecast] = useState(null);
+  let [loaded, setLoaded] = useState(false);
+  let [forecast, setForecast] = useState(null);
 
-    useEffect(() => {
-        setLoaded(false);
-    }, [props.coordinates]);
+  useEffect(() => {
+    setLoaded(false);
+  }, [props.coordinates]);
 
-    function handleResponse(response) {
-        setForecast(response.data.daily);
-        setLoaded(true);
-    }
+  function handleResponse(response) {
+    setForecast(response.data.daily);
+    setLoaded(true);
+    console.log(response.data)
+  }
 
-    function load() {
-        let apiKey = "e0a5a97de9a0b7a951e9d154a8f9bad8";
-        let lon = props.coordinates.lon;
-        let lat = props.coordinates.lat;
-        let url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+  if (loaded) {
+    return (
+      <div className="WeatherForecast">
+        <div className="row mb-5">
+          <div className="col">
+            <WeatherForecastDay data={forecast[1]} />
+          </div>
+  
+        <div className="col">
+            <WeatherForecastDay data={forecast[2]} />
+          </div>
+          <div className="col">
+            <WeatherForecastDay data={forecast[3]} />
+          </div>
+          <div className="col">
+            <WeatherForecastDay data={forecast[4]} />
+          </div>
+          <div className="col mob-n ">
+            <WeatherForecastDay data={forecast[5]} />
+          </div>
+   
+          </div>
+      </div>
+    );
+  } else {
+    let apiKey = "a867e25f2d83db579421a57fd8e937ec";
+    let longitude = props.coordinates.lon;
+    let latitude = props.coordinates.lat;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
 
-        axios.get(url).then(handleResponse);
-    }
+    axios.get(apiUrl).then(handleResponse);
 
-    if (loaded) {
-        return (
-            <div className="WeatherForecast">
-                <div className="row">
-                    {forecast.map((dailyForecast, index)=>{
-                        if (index < 6) {
-                        return (
-                        <div className="col" key={index}>
-                        <WeatherForecastDay data={dailyForecast} />
-                    </div>
-                    );
-                    } else {
-                        return null;
-                    }
-                    })}
-                </div>
-            </div>
-        );
-
-    } else {
-
-        load();
-        
-        return null;
-    
-    }
+    return null;
+  }
 }
