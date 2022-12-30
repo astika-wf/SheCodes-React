@@ -21,7 +21,7 @@ export default function WeatherForecastDay(props) {
   }
 
   return (
-    <div className="d-flex flex-row">
+    <div className="row">
     <div className="col-2">
       <div className="WeatherForecast-day">{formattedDay()}</div>
       <WeatherIcon
