@@ -14,11 +14,14 @@ export default function WeatherForecast(props) {
     setLoaded(false);
   }, [props.coordinates]);
 
-  
+  <div className="d-flex flex-row"> 
+    <div className="row">
   function getWeatherForecast(response) {
     setForecast(response.data.daily);
     setLoaded(true);
   }
+    </div>
+  </div>
 
   function searchForecast() {
     let apiKey = "57b2c40fdae71a6ba41d72685e3226e2";
