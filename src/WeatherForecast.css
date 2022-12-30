@@ -1,3 +1,9 @@
+ div {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: clip;
+      }
+
 .WeatherForecast {
   font-weight: 15;
 }
