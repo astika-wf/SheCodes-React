@@ -48,15 +48,15 @@
  .search-engine {
  display: block;
  position: relative;
- margin-bottom: 15px;
- padding-bottom: 10px;
+ margin-bottom: 5px;
+ padding-bottom: 5px;
  top: -15px;
 }
   .current-button {
   display: block;
   position: relative;
   margin: auto;
-  top: 5px;
+  top: 25px;
   left:-60px;
   background-color: #38598b;
   color: white;
