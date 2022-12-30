@@ -63,7 +63,7 @@
   background-color: lavender;
   color: #38598b;
   border: none;
-  font-size: medium;
+  font-size: small;
 }
   .current-button {
   display: block;
@@ -75,6 +75,6 @@
   background-color: #38598b;
   color: white;
   border: none;
-  font-size: medium;
+  font-size: small;
 }
 }
