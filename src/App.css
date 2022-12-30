@@ -17,12 +17,12 @@ body {
   display: block;
   position: relative;
   margin: auto;
-  top: 25px;
+  top: 35px;
   background: linear-gradient(red, transparent),
     linear-gradient(to top left, #92b4ec, transparent),
     linear-gradient(to bottom right, #cdf0ea, transparent);
   background-blend-mode: screen;
-  max-width: 40%;
+  max-width: 50%;
   border: 1px solid #dadde1;
   border-radius: 50px;
   box-shadow: 5px 10px;
