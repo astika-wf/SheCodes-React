@@ -50,13 +50,14 @@
  position: relative;
  margin-bottom: 15px;
  padding-bottom: 10px;
+ top: -25px;
 }
   .current-button {
   display: block;
   position: relative;
   margin: auto;
   top: 5px;
-  left:-30px;
+  left:-60px;
   background-color: #38598b;
   color: white;
   border: none;
