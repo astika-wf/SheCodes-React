@@ -4,70 +4,97 @@ import axios from "axios";
 import WeatherData from "./WeatherData";
 import WeatherForecast from "./WeatherForecast.js";
 
-
 import "./Weather.css";
 
 export default function Weather(props) {
+  const [weatherData, setWeatherData] = useState({
+    ready: false,
+  });
+  const [city, setCity] = useState(props.defaultCity);
 
-    const [weatherData, setWeatherData] = useState({});
-    const [city, setCity] = useState(props.defaultCity);
+  function handleSubmit(event) {
+    setWeatherData({ ready: false });
+    event.preventDefault();
+    setCity(event.target.elements.cityInput.value);
+    search();
+  }
 
-    function handleResponse(response) {
-        
-        setWeatherData({
-            ready: true,
-            description: response.data.weather[0].description,
-            temperature: response.data.main.temp,
-            coordinates: response.data.coord,
-            humidity: response.data.main.humidity,
-            date: new Date(response.data.dt * 1000),
-            wind: response.data.wind.speed,
-            city: response.data.name,
-            icon: response.data.weather[0].icon
-        })
-    }
+  function search() {
+    const apiKey = "3fdc8cfbf2d6fa0116c9ae92d3df4f79";
+    const apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(apiURL).then(displayWeather);
+  }
 
-    function search() {
-        const apiKey = "5e96109715e693faebfe6b3b1afdacba";
-        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-        axios.get(url).then(handleResponse);
-    }
+  function onClickCurrentLocButton(event) {
+    event.preventDefault();
+    navigator.geolocation.getCurrentPosition(getCurrentPosition);
+  }
 
-    function handleSubmit(event) {
-        event.preventDefault();
-        search();
-        //city
-    }
+  function getCurrentPosition(position) {
+    let apiKey = "06253f1b1ac0432d6e25594b80a53a85";
+    let apiURL = "https://api.openweathermap.org/data/2.5/weather";
+    let lat = position.coords.latitude;
+    let lon = position.coords.longitude;
+    axios
+      .get(`${apiURL}?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`)
+      .then(displayWeather);
+  }
 
-    function handleCityChange(event) {
-        setCity(event.target.value);
-    }
+  function displayWeather(response) {
+    setWeatherData({
+      ready: true,
+      city: response.data.name,
+      country: response.data.sys.country,
+      coordinates: response.data.coord,
+      date: new Date(response.data.dt * 1000),
+      temperature: Math.round(response.data.main.temp),
+      description: response.data.weather[0].description,
+      humidity: response.data.main.humidity,
+      wind: response.data.wind.speed,
+      icon: response.data.weather[0].icon,
+    });
+  }
 
-    if (weatherData.ready) {
-        return (
-            <div className="App">
-                <div className="Weather">
-            <form onSubmit={handleSubmit} >
-                <div className="row">
-                    <div className="col-9">
-                        <input type="search" placeholder="Enter a city.." className="form-control" autoFocus="on" onChange={handleCityChange} />
-                    </div>
-                <div className="col-3">
-                    <input type="submit" value="Search" className="btn btn-primary w-100" />
-                </div>
-                </div>
-            </form>
-            <WeatherData data={weatherData} />
-            <br />
-            <WeatherForecast coordinates={weatherData.coordinates} />
+  if (!weatherData.ready) {
+    search();
+    return "Loading...";
+  } else {
+    return (
+      <div className="Weather">
+        <div className="search-engine">
+          <form onSubmit={handleSubmit}>
+            <div className="row">
+              <div className="col-8">
+                <input
+                  name="cityInput"
+                  type="text"
+                  className="form-control"
+                  placeholder="Enter a city..."
+                  autoFocus="on"
+                  autoComplete="off"
+                />
+              </div>
+              <div className="col-2">
+                <input
+                  type="submit"
+                  className="btn shadow-sm search-button"
+                  value="Search"
+                />
+              </div>
+              <div className="col-2">
+                <button
+                  className="btn shadow-sm current-button"
+                  onClick={onClickCurrentLocButton}
+                >
+                  Current
+                </button>
+              </div>
             </div>
-            </div>
-            
-            )
-    } else {
-        search();
-    return "Loading the weather..."
-
-    }
-
-    }
+          </form>
+        </div>
+        <WeatherData data={weatherData} />
+        <WeatherForecast coordinates={weatherData.coordinates} />
+      </div>
+    );
+  }
+}
