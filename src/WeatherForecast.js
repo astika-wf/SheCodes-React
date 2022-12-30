@@ -33,6 +33,7 @@ export default function WeatherForecast(props) {
     return null;
   } else {
     return (
+     <div className="container">
       <div className="WeatherForecast">
         <div className="row">
           {forecast.map(function (dailyForecast, index) {
@@ -44,6 +45,7 @@ export default function WeatherForecast(props) {
           })}
         </div>
       </div>
+    </div>
     );
   }
 }
