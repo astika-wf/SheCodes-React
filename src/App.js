@@ -11,7 +11,9 @@ export default function App() {
         <div className="container">
           <Weather defaultCity="Jakarta" />
         </div>
+        <div className="github">
         <GithubRepo />
+        </div>
       </div>
     </div>
   );
