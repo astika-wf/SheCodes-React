@@ -57,19 +57,21 @@
   display: block;
   position: relative;
   margin: auto;
-  top: -15px;
+  top: -12px;
   background-color: lavender;
   color: #38598b;
   border: none;
+  font-size: medium;
 }
   .current-button {
   display: block;
   position: relative;
   margin: auto;
   top: 25px;
-  left:-60px;
+  left:-70px;
   background-color: #38598b;
   color: white;
   border: none;
+  font-size: medium;
 }
 }
