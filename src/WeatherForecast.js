@@ -13,10 +13,12 @@ export default function WeatherForecast(props) {
     setLoaded(false);
   }, [props.coordinates]);
 
+  <span className="row">
   function getWeatherForecast(response) {
     setForecast(response.data.daily);
     setLoaded(true);
   }
+  </span>
 
   function searchForecast() {
     let apiKey = "57b2c40fdae71a6ba41d72685e3226e2";
