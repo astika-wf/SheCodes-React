@@ -22,7 +22,7 @@ body {
     linear-gradient(to top left, #92b4ec, transparent),
     linear-gradient(to bottom right, #cdf0ea, transparent);
   background-blend-mode: screen;
-  max-width: 50%;
+  max-width: 45%;
   border: 1px solid #dadde1;
   border-radius: 50px;
   box-shadow: 5px 10px;
