@@ -37,6 +37,14 @@ body {
  top: 20px;
 }
 
+.github {
+ display: block;
+ position: relative;
+ margin: auto;
+ text-align: center;
+ top: 20px;
+}
+
 @media (max-width: 800px) {
   .App {
     display: block;
