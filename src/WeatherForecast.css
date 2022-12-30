@@ -1,3 +1,7 @@
+.WeatherForecast {
+  font-weight: 25;
+}
+
 .WeatherForecast-temperature-min {
   opacity: 0.7;
 }
