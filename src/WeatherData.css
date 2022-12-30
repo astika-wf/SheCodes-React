@@ -1,3 +1,16 @@
+.current-date-title {
+  position: relative;
+  left: 20px;
+  top: 15px;
+}
+
+.clock {
+ position: relative;
+ left: -20px;
+}
+
+
+
 .icon {
   display: block;
   position: relative;
@@ -15,6 +28,11 @@
   top: -10px;
 }
 
+.weather-description {
+  position: relative;
+  top: 15px;
+}
+  
 .weather-description .weather-list {
   list-style-type: none;
 }
