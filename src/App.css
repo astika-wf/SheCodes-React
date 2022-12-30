@@ -8,8 +8,9 @@ body {
   background-attachment: fixed;
   min-height: 100vh;
   display: block;
-  position: relative;
   margin: auto;
+  position: relative;
+  text-align: center;
 }
 
 .App {
