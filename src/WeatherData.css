@@ -82,4 +82,14 @@
   font-style: normal;
   top: -10px;
 }
+ .wind {
+  position: relative;
+  left: -40px;
+}
+
+.humidity {
+  position: relative;
+  left: -20px;
+  margin-bottom: 10px;
+}
 }
