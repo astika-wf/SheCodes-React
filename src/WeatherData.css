@@ -69,6 +69,16 @@
  margin: auto;
  text-align: center;
  margin-bottom: 10px;
- left: 60px;
+ left: -10px;
+}
+ 
+ .Temperature {
+  display: block;
+  position: relative;
+  margin: auto;
+  font-weight: bolder;
+  font-size: small;
+  font-style: normal;
+  top: -10px;
 }
 }
