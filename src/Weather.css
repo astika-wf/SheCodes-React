@@ -3,6 +3,9 @@
 }
 
 .search-button {
+  position: relative;
+  margin: auto;
+  top: 10px;
   background-color: lavender;
   color: #38598b;
   border: none;
