@@ -7,9 +7,15 @@ body {
   overflow: hidden;
   background-attachment: fixed;
   min-height: 100vh;
+  display: block;
+  position: relative;
+  margin: auto;
 }
 
 .App {
+  display: block;
+  position: relative;
+  margin: auto;
   top: 25px;
   background: linear-gradient(red, transparent),
     linear-gradient(to top left, #92b4ec, transparent),
