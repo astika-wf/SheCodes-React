@@ -30,8 +30,7 @@ export default function WeatherForecast(props) {
       .then(getWeatherForecast);
   }
   
-<div className="container">
-  <div className="row"> 
+
   if (!loaded) {
     searchForecast();
     return null;
@@ -50,8 +49,6 @@ export default function WeatherForecast(props) {
           </div>
         </div>
       </div>
-    </div>
-  </div>
     );
   }
 }
