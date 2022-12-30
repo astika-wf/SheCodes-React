@@ -1,12 +1,13 @@
-.current-date-title {
+.current-date {
   position: relative;
-  left: 20px;
+  left: 40px;
   top: 15px;
+  font-size: 25px;
 }
 
 .clock {
  position: relative;
- left: -20px;
+ left: -40px;
 }
 
 
