@@ -5,7 +5,7 @@ import WeatherForecastDay from "./WeatherForecastDay";
 
 import "./WeatherForecast.css";
 
-<div className="row">
+
 export default function WeatherForecast(props) {
   let [loaded, setLoaded] = useState(false);
   let [forecast, setForecast] = useState(null);
@@ -37,7 +37,7 @@ export default function WeatherForecast(props) {
   } else {
     return ( 
       <div className="WeatherForecast">
-        <div className="row"> 
+        <div className="d-flex flex-row"> 
           <div className="col-2">
           {forecast.map(function (dailyForecast, index) {
             if (index < 7 && index !== 0) {
@@ -52,4 +52,4 @@ export default function WeatherForecast(props) {
     );
   }
 }
-</div>
+
