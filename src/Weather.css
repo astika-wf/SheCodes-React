@@ -5,7 +5,8 @@
 .search-engine {
  display: block;
  position: relative;
- margin-bottom: 5px;
+ margin-bottom: 15px;
+ padding-bottom: 10px;
  top: 5px;
 }
 
