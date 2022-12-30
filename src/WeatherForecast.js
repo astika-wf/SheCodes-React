@@ -29,31 +29,32 @@ export default function WeatherForecast(props) {
       .then(getWeatherForecast);
   }
   
-
-  if (!loaded) {
-    searchForecast();
-    return null;
-  } else {
-    return ( 
-      <div className="WeatherForecast">
-        <div className="row"> 
-          <div className="col">
-          {forecast.map(function (dailyForecast, index) {
-            if (index < 7 && index !== 0) {
-              return 
-              (
-               <div className="col" key={index}>
-               <WeatherForecastDay data={dailyForecast} />
-               </div>
+  
+  
+    if (loaded) {
+        return (
+            <div className="WeatherForecast">
+                <div className="row">
+                    {forecast.map((dailyForecast, index)=>{
+                        if (index < 6) {
+                        return (
+                        <div className="col" key={index}>
+                        <WeatherForecastDay data={dailyForecast} />
+                    </div>
                     );
-            } else {
-              return null;
-            }
-          })}
-          </div>
-        </div>
-      </div>
-    );
-  }
-}
+                    } else {
+                        return null;
+                    }
+                    })}
+                </div>
+            </div>
+        );
 
+    } else {
+
+        load();
+        
+        return null;
+    
+    }
+}
