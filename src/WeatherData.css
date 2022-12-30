@@ -69,7 +69,7 @@
  margin: auto;
  text-align: center;
  margin-bottom: 10px;
- left: -10px;
+ left: -30px;
 }
  
  .Temperature {
@@ -77,7 +77,7 @@
   position: relative;
   margin: auto;
   font-weight: bolder;
-  font-size: small;
+  font-size: large;
   font-style: normal;
   top: -10px;
 }
