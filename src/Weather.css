@@ -5,15 +5,15 @@
 .search-engine {
  display: block;
  position: relative;
- margin: auto;
- top: 10px;
+ margin-bottom: 5px;
+ top: 5px;
 }
 
 .search-button {
   display: block;
   position: relative;
   margin: auto;
-  top: 10px;
+  top: 5px;
   background-color: lavender;
   color: #38598b;
   border: none;
@@ -30,7 +30,7 @@
   display: block;
   position: relative;
   margin: auto;
-  top: 10px;
+  top: 5px;
   background-color: #38598b;
   color: white;
   border: none;
