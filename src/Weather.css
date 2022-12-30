@@ -52,6 +52,16 @@
  padding-bottom: 5px;
  top: -15px;
 }
+    
+.search-button {
+  display: block;
+  position: relative;
+  margin: auto;
+  top: -15px;
+  background-color: lavender;
+  color: #38598b;
+  border: none;
+}
   .current-button {
   display: block;
   position: relative;
