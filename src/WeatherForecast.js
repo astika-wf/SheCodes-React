@@ -29,15 +29,16 @@ export default function WeatherForecast(props) {
       .get(`${apiURL}?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`)
       .then(getWeatherForecast);
   }
-
+  
+<div className="container">
+  <div className="row"> 
   if (!loaded) {
     searchForecast();
     return null;
   } else {
-    return (
-     <div className="container">
+    return ( 
       <div className="WeatherForecast">
-        <div className="d-flex flex-row"> 
+        <div className="row"> 
           <div className="col-2">
           {forecast.map(function (dailyForecast, index) {
             if (index < 7 && index !== 0) {
@@ -50,6 +51,7 @@ export default function WeatherForecast(props) {
         </div>
       </div>
     </div>
+  </div>
     );
   }
 }
