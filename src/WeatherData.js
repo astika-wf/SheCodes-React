@@ -26,8 +26,10 @@ export default function WeatherData(props) {
         </div>
         <div className="col-4 clock">
           <h2>
+           <span className="clock">
             {" "}
             <Time time={props.data.date} />
+           </span>
           </h2>
         </div>
       </div>
