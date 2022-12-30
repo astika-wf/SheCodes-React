@@ -1,8 +1,14 @@
 .icon {
+  display: block;
+  position: relative;
+  margin: auto;
   bottom: 20px;
 }
 
 .Temperature {
+  display: block;
+  position: relative;
+  margin: auto;
   font-weight: bolder;
   font-size: larger;
   font-style: normal;
@@ -29,4 +35,5 @@
 .humidity {
   position: relative;
   left: -20px;
+  margin-bottom: 10px;
 }
